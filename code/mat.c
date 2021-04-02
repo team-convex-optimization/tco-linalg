@@ -1,3 +1,5 @@
+#include <string.h>
+
 #include "tco_linalg.h"
 
 int matf_mul_matf(matf_t const *const a, matf_t const *const b, matf_t *const c)
@@ -9,6 +11,7 @@ int matf_mul_matf(matf_t const *const a, matf_t const *const b, matf_t *const c)
 
     c->rows = a->rows;
     c->cols = b->cols;
+    memset(c->data, 0, c->cols * c->rows * sizeof(float));
 
     for (uint16_t a_row_idx = 0; a_row_idx < a->cols; a_row_idx++)
     {
