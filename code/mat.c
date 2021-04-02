@@ -1,13 +1,6 @@
 #include "tco_linalg.h"
 
-/**
- * @brief Applies the naive schoolbook algorithm which runs with time complexity of O(n^3).
- * @param a Matrix A.
- * @param b Matrix B.
- * @param c Matrix AB. This gets overwritten by this function.
- * @return 0 on succes and -1 on failure.
- */
-int matf_mul_matf(matf_t *const a, matf_t *const b, matf_t *const c)
+int matf_mul_matf(matf_t const *const a, matf_t const *const b, matf_t *const c)
 {
     if (a->cols != b->rows)
     {
