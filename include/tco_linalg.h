@@ -15,6 +15,12 @@ typedef struct vec2
     int16_t y;
 } vec2_t;
 
+typedef struct line2
+{
+    point2_t orig;
+    vec2_t dir;
+} line2_t;
+
 typedef struct segment2
 {
     point2_t start;
