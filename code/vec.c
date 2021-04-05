@@ -15,16 +15,11 @@ int vec2_inv_length(vec2_t const *const vec, float *const inv_len)
     return 0;
 }
 
-int vec2_sub_vec2(vec2_t const *const a, vec2_t const *const b, vec2_t *const c)
+int vec2_length_change(vec2_t *const vec, float const length_desired)
 {
-    c->x = a->x - b->x;
-    c->y = a->y - b->y;
-    return 0;
-}
-
-int vec2_add_vec2(vec2_t const *const a, vec2_t const *const b, vec2_t *const c)
-{
-    c->x = a->x + b->x;
-    c->y = a->y + b->y;
+    float inv_len;
+    vec2_inv_length(vec, &inv_len);
+    vec->x = vec->x * length_desired * inv_len;
+    vec->y = vec->y * length_desired * inv_len;
     return 0;
 }

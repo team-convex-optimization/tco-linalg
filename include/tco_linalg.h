@@ -60,21 +60,11 @@ int vec2_length(vec2_t const *const vec, float *const len);
 int vec2_inv_length(vec2_t const *const vec, float *const inv_len);
 
 /**
- * @brief Subtract vector @p b from vector @p a to get vector @p c .
- * @param a First operand.
- * @param b Second operand.
- * @param c Outcome of a - b.
+ * @brief Change the length of a vector to the given length.
+ * @param vec The vector whose length will change.
+ * @param length_desired The length to which the @p vec will be shortened/extended to.
  * @return 0 on success and -1 on failure.
  */
-int vec2_sub_vec2(vec2_t const *const a, vec2_t const *const b, vec2_t *const c);
-
-/**
- * @brief Add vector @p a to @p b to get vector @p c .
- * @param a First operand.
- * @param b Second operand.
- * @param c Outcome of a + b.
- * @return 0 on success and -1 on failure.
- */
-int vec2_add_vec2(vec2_t const *const a, vec2_t const *const b, vec2_t *const c);
+int vec2_length_change(vec2_t *const vec, float const length_desired);
 
 #endif /* _TCO_LINALG_H_ */
